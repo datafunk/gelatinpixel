@@ -1,0 +1,215 @@
+/* cascading style sheet for GeLaTiN PHoToBLoG http://blog.gelatinpixel.com */
+
+body {
+	background-color: #000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #eee;
+	align: center;
+}
+
+#header 
+{
+background-color: ##F9F9F9;
+padding:3px;
+font-size: 12px normal;
+border: 1px solid #666;
+}
+
+h1 {    background-color: #b9b9b9;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px bold;
+	color: #000000;
+}
+
+/*.h1 {
+	background-color : #000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #eee;
+	font-weight: bold;
+}*/
+
+h2 {
+	background-color: #000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px bold;
+	color: #eee;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #eee;
+	font-weight: bold;
+}
+
+h3 {	
+	background-color: #000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px bold;
+	color: #eee;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: normal;
+	color: #eee;
+}
+
+p {
+	background-color : #000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #eee;
+}
+
+a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #aaa;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #eee;
+	text-decoration: none;
+}
+
+a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: #aa2420;
+}
+
+
+
+.links {
+	align:left;
+	float:right;
+	color: #aaa;
+	text-decoration: none;
+}
+
+.links a:visited {
+	color: #aaa;
+}
+
+.links a:hover { 
+color: #aa2420;
+}
+
+.frame {
+	border: 4px double #383838;
+}
+
+
+
+#wrapper 
+{
+margin-left: auto;
+margin-right: auto;
+padding-top:25px;
+/*padding-left:10px;
+padding-right:10px;
+padding-bottom:10px;*/
+width:950px;
+}
+
+#wrapper-about
+{
+margin-right: auto;
+margin-left: auto;
+padding-top:25px;
+padding-left:10px;
+padding-right:10px;
+padding-bottom:10px;
+width:600px;
+text-align:justify;
+}
+
+#wrap1
+{
+/*margin:0px auto;
+padding-top:0px;
+padding-left:0px;
+padding-right:10px;
+padding-bottom:0px;*/
+width:45%;
+align:left;
+}
+
+#wrap2
+{
+/*margin:0px auto;
+padding-top:0px;
+padding-left:10px;
+padding-right:0px;
+padding-bottom:0px;*/
+width:45%;
+align:left;
+float:right;
+}
+
+#wrapcomment
+{
+margin:0px;
+padding-right:20px;
+width:300px;
+align:right;
+font-style: 8px;
+}
+
+#wrapnote
+{
+margin:0px;
+padding-left: 20px;
+width:300px;
+align:left;
+float:right;
+}
+
+.textarea
+{
+padding:4px;
+font-size: 1em;
+border-top: 1px solid #cc2420;
+border-bottom: 1px solid #cc2420;
+border-left: 1px solid #cc2420;
+border-right: 1px solid #cc2420;
+}
+
+#comments
+{
+width: 700px;
+margin:10px;
+padding:3px;
+align:middle;
+}
+
+.comment-button
+{
+margin-top:4px;
+background-color: #ccc;
+font-size: 1em;
+border: 1px solid #ddd;
+}
+
+#tline
+{
+padding:3px;
+text-align:left;
+font-size: 12px normal;
+}
+
+#footer 
+{
+text-align:center;
+margin-bottom:20px;
+}
+
+.thumbnails 
+{
+text-align:center;
+padding:2px;
+background-color: #686868;
+border: 1px solid #383838;
+margin: 1px;
+}
