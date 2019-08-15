@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+<IMAGE_TITLE> | <SITE_TITLE> | <SUB_TITLE>
+</title>
+<!-- Link for ATOM feed autodiscovery -->
+<ATOM_AUTODETECT_LINK>
+<!-- Link for RSS feed autodiscovery -->
+<RSS_AUTODETECT_LINK>
+<!-- META -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="content-type" name="keywords" content="PhotoBlog,<SITE_TITLE>,<IMAGE_TITLE>,Pixelpost" />
+<meta http-equiv="content-type" name="description" content="<SITE_TITLE>-PhotoBlog: <IMAGE_TITLE>, <IMAGE_NOTES_CLEAN>" />
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="templates/supaclean/styles/light.css" title="light" />
+<link rel="alternate stylesheet" type="text/css" href="templates/supaclean/styles/dark.css" title="dark" />
+<!-- js -->
+<script type="text/javascript" src="templates/supaclean/js/jquery.js"></script>
+<script type="text/javascript" src="templates/supaclean/js/styleswitcher.js"></script>
+<script type="text/javascript">
+function clearBox(box) {
+		 if(box.value==box.defaultValue) {
+	 	 	 box.value = "";
+	 	 }
+	 }
+	 
+	 
+$(document).ready(function(){
+  $("div#comments, div#details").hide();
+   $("a.showComments").click(function(){
+		if ($("div#comments").css("display") == "none") {
+			$("div#comments").slideDown();
+			$("div#mainImg").slideUp();
+		} else {
+			$("div#comments").slideUp();
+			$("div#mainImg").slideDown();
+			}
+		
+		$("div#details").slideUp();
+		
+		return false;
+   });
+   $("a.showInfo").click(function(){
+   		if ($("div#details").css("display") == "none") {
+			$("div#details").slideDown();
+			$("div#mainImg").slideUp();
+		} else {
+			$("div#details").slideUp();
+			$("div#mainImg").slideDown();
+			}
+		$("div#comments").slideUp();
+		
+		return false;
+   });
+   $("a.showPhoto").click(function(){
+   		$("div#mainImg").slideDown();
+		$("div#comments").slideUp();
+		$("div#details").slideUp();
+		return false;
+   });
+   
+   $("div#EXIF").css("opacity", .75);
+   $("div.photoWrapper").hover(function(){
+   	$("div#EXIF").fadeIn();
+   }, function(){
+   	$("div#EXIF").fadeOut();
+   });
+   
+   
+ });
+</script>
+
+</head>
+<body>
+<div class="container">
+<div id="banner">
+  <h1><a href="<SITE_URL>" title="Return to current image"><SITE_TITLE></a></h1>
+  <div class="menu">
+  <a href="index.php" title="Return to Homepage" class="first">Home</a>
+  	  <IMAGE_PREVIOUS_LINK>
+	  <IMAGE_NEXT_LINK>
+      <a href="<SITE_BROWSELINK>">Browse</a>
+      <a href="index.php?x=about" title="About">About</a>
+      <SITE_RSS_LINK>
+	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" class="showInfo">Details</a>
+	  <a href="#" class="showComments">Comments (<IMAGE_COMMENTS_NUMBER>)</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  Style: <a href="#" class="light" onclick="setActiveStyleSheet('light'); return false;" title="Light">&nbsp;</a> <a href="#" class="dark" onclick="setActiveStyleSheet('dark'); return false;" title="Dark">&nbsp;</a>
+  </div>
+</div>
+<div class="mainBody">
+  <div id="details">
+    <div class="wrapper">
+		
+        <div class="notes">
+			<div class="content">
+				<h2><IMAGE_TITLE></h2>
+				<IMAGE_NOTES>
+				<h3>Categories &amp; Tags</h3>
+				<IMAGE_CATEGORY>
+				<br /><br />
+				Tags: <TAG_IMG_LIST>
+				<h3>EXIF</h3>
+				<LANG_FOCAL_LENGTH><br />
+				<LANG_EXPOSURE_TIME><br />
+				<LANG_APERTURE><br />
+				<LANG_ISO><br />
+				<LANG_CAMERA_MODEL>
+				
+			</div>
+		</div>
+		<div class="details">
+			<div class="content">
+				<a href="#" class="showPhoto">[close details]</a><br /><br />
+				<img src="images/<IMAGE_NAME>" alt="<IMAGE_TITLE>" title="<IMAGE_TITLE>"  width="<IMAGE_WIDTH>" height="<IMAGE_HEIGHT>" border="0" class="smallImg"/>
+				
+				
+				
+			</div>
+		</div>
+    </div>
+  </div>
+  <div id="comments">
+  <div class="wrapper">
+  	
+  	<div class="commentList">
+		<div class="content">
+		<h3>Comments on <IMAGE_TITLE></h3>
+			<IMAGE_COMMENTS>
+		</div>
+	</div>
+	<div class="commentForm">
+		
+		<div class="content">
+			<a href="#" class="showPhoto">[close comments]</a><br /><br />
+			<img src="images/<IMAGE_NAME>" alt="<IMAGE_TITLE>" title="<IMAGE_TITLE>"  width="<IMAGE_WIDTH>" height="<IMAGE_HEIGHT>" border="0" class="smallImg"/>
+			<h3>Add Comment</h3>
+			<form method='post' action='index.php?x=save_comment' name='commentform' accept-charset='UTF-8'>
+            <textarea name='message' rows='2' cols='40' onfocus="clearBox(this);">Type your comment here.</textarea>
+            <br />
+            <br />
+            <input type='text' name='name' class='input' value='<VINFO_NAME>' id="name"/>
+            &nbsp;&nbsp;&nbsp;
+            <label for="name">Name</label>
+            <br />
+            <br />
+            <input type='text' name='url' class='input' value='<VINFO_URL>' id="url"/>
+            &nbsp;&nbsp;&nbsp;
+            <label for="url">Website URL, if any</label>
+            <br />
+            <br />
+            <input class='input' type='text' name='email' value='<VINFO_EMAIL>' id="email"/>
+            &nbsp;&nbsp;&nbsp;
+            <label for="email">Email (not visible to
+            others)</label>
+            <br />
+            <br />
+            <input name='vcookie' type='checkbox' id="saveinfo" value='set' checked="checked" />
+            <label for="saveinfo">Save User Info</label>
+            <br />
+            <br />
+            &nbsp;&nbsp;
+            <input type='submit' value='Add' class="comment-button"/>
+            <input type='hidden' name='parent_id' value='<IMAGE_ID>' />
+            <input type='hidden' name='parent_name' value='<IMAGE_NAME>' />
+            <input type="hidden" name="withthankyou" value="no" />
+          </form>
+		</div>
+	</div>
+  </div>
+  </div>
+  
+  <div id="mainImg"> <div class="photoWrapper" style="position:relative; width:<IMAGE_WIDTH>px; margin:0 auto;"><a href="index.php?showimage=<IMAGE_PREVIOUS_ID>" style="background:none;"> <img src="images/<IMAGE_NAME>" alt="<IMAGE_TITLE>" title="<IMAGE_TITLE>" width="<IMAGE_WIDTH>" height="<IMAGE_HEIGHT>" id="photo"  border="0"/> </a> 
+  <div id="EXIF" style="width:<IMAGE_WIDTH>px;"><div class="title">
+  <!-- <div class="links"><a href="#" class="showInfo">Details</a> | <a href="#" class="showComments">Comments (<IMAGE_COMMENTS_NUMBER>)</a></div> -->
+  <strong><IMAGE_TITLE></strong> 
+  	</div><div class="content">
+  
+  <LANG_FOCAL_LENGTH> | <LANG_EXPOSURE_TIME> | <LANG_APERTURE> | <LANG_ISO> | <LANG_CAMERA_MODEL>
+  </div></div>
+  </div>
+  </div>
+  
+  <div class="footer">
+  
+
+  
+  all
+    images &copy; <a href="<SITE_URL>"><SITE_TITLE></a></div>
+</div>
+  </div>
+  <script type="text/javascript">
+
+  	var scale = 300/<IMAGE_WIDTH>;
+	var newWidth = Math.floor(<IMAGE_WIDTH> * scale);
+	var newHeight = Math.floor(<IMAGE_HEIGHT> * scale);
+   $("img.smallImg").width(newWidth);
+   $("img.smallImg").height(newHeight);
+
+  </script>
+</body>
+</html>
