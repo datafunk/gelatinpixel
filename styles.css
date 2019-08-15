@@ -28,11 +28,17 @@ body {
     overflow:hidden;
 }
 
-body > div {
+h1 {
+    /* margin: 10%; */
+    padding: 1em;
+    text-align: right;
+}
+
+/* body > div {
     margin: 10% auto auto;
     padding: 1em;
     width: 320px;
-    background-color: rgba(0,0,0,.75);
+    background-color: rgba(0,0,0,0);
 }
 
 body > div h1,
@@ -58,7 +64,6 @@ a:active {
 }
 
 a:hover {
-    /*text-decoration: underline;*/
     background-color: white;
     color:red;
-}
+} */
